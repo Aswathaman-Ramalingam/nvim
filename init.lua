@@ -60,6 +60,10 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('i', '<Esc>[1;5C', '<C-Right>')
+vim.keymap.set('i', '<Esc>[1;5D', '<C-Left>')
+
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -85,7 +89,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  {                            -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -98,7 +102,7 @@ require('lazy').setup({
     },
   },
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -154,10 +158,9 @@ require('lazy').setup({
   },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { 
+  {
     'echasnovski/mini.nvim',
     config = function()
-
       require('mini.ai').setup { n_lines = 500 }
       require('mini.surround').setup()
 
@@ -170,7 +173,7 @@ require('lazy').setup({
       end
     end,
   },
-  { 
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
@@ -182,7 +185,6 @@ require('lazy').setup({
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
-  
   },
   require 'plugins.debug',
   require 'plugins.lint',
@@ -196,7 +198,7 @@ require('lazy').setup({
   require 'plugins.completions',
   require 'plugins.catppuccin',
   require 'plugins.formatting',
-
+  require 'plugins.diagnostics',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
