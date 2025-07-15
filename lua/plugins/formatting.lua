@@ -1,6 +1,5 @@
 return {
-
-  { -- Autoformat
+  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -30,15 +29,21 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black' },
-        javascript = { 'biom' },
-        javascriptreact = { 'biom' },
-        typescript = { 'biom' },
-        typescriptreact = { 'biom' },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         svelte = { 'prettierd' },
         html = { 'prettierd' },
         rust = { 'rustfmt' },
         java = { 'google-java-format' },
       },
     },
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
   },
 }
