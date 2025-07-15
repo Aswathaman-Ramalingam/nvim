@@ -3,42 +3,38 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  -- lazy.nvim
-  {
-    'folke/noice.nvim',
-    event = 'VeryLazy',
-    opts = {
-      -- add any options here
+    -- lazy.nvim
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            'MunifTanjim/nui.nvim',
+            config = function()
+                require('notify').setup {
+                    stages = 'fade_in_slide_out',
+                    timeout = 3000,
+                    background_colour = '#1a1b26',
+                    render = 'default',
+                    max_width = math.floor(vim.o.columns * 0.4),
+                    max_height = function()
+                        return math.floor(vim.o.lines * 0.3)
+                    end,
+                    minimum_width = 50,
+                    fps = 60,
+                    icons = {
+                        ERROR = '',
+                        WARN = '',
+                        INFO = '',
+                        DEBUG = '',
+                        TRACE = '✎',
+                    },
+                }
+                vim.notify = require 'notify'
+            end,
+        },
     },
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      'MunifTanjim/nui.nvim',
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      'rcarriga/nvim-notify',
-      config = function()
-        require('notify').setup {
-          stages = 'fade_in_slide_out',
-          timeout = 3000,
-          background_colour = '#1a1b26',
-          render = 'default',
-          max_width = math.floor(vim.o.columns * 0.4),
-          max_height = function()
-            return math.floor(vim.o.lines * 0.3)
-          end,
-          minimum_width = 50,
-          fps = 60,
-          icons = {
-            ERROR = '',
-            WARN = '',
-            INFO = '',
-            DEBUG = '',
-            TRACE = '✎',
-          },
-        }
-        vim.notify = require 'notify'
-      end,
-    },
-  },
 }

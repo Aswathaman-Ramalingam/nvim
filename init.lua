@@ -63,6 +63,14 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('i', '<Esc>[1;5C', '<C-Right>')
 vim.keymap.set('i', '<Esc>[1;5D', '<C-Left>')
 
+-- Move current line up and down
+vim.keymap.set('n', '<C-S-Up>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-S-Down>', ':m .+1<CR>==', { noremap = true, silent = true })
+
+-- Move selected lines up in visual mode
+vim.keymap.set('x', '<C-S-Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('x', '<C-S-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -88,7 +96,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  {                            -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -101,7 +109,7 @@ require('lazy').setup({
     },
   },
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -153,7 +161,6 @@ require('lazy').setup({
     opts = { signs = false },
   },
 
-  require 'plugins.debug',
   require 'plugins.lint',
   require 'plugins.autopairs',
   require 'plugins.neo-tree',
