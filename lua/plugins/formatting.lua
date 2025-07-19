@@ -43,8 +43,8 @@ return {
     {
         'windwp/nvim-ts-autotag',
         config = function()
-            require('nvim-ts-autotag').setup() {
-                autotag = {
+            require('nvim-ts-autotag').setup({
+                opts = {
                     enable = true,
                     enable_close = true,
                     enable_rename = true,
@@ -57,8 +57,8 @@ return {
                         'typescriptreact',
                         'svelte',
                     },
-                }
-            }
+                },
+            })
         end,
         event = 'InsertEnter',
     },

@@ -17,15 +17,11 @@ return {
                     'jdtls',
                     'lua_ls',
                     'pyright',
-                    'rust_analyzer',
                     'svelte',
                     'tailwindcss',
                     'ts_ls',
-                    -- 'gopls',
                 },
             }
-
-
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
                     local bufopts = { buffer = args.buf }
@@ -34,13 +30,20 @@ return {
                     vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, bufopts)
                 end,
             })
+
+            -- Optional: Configure diagnostic settings globally
+            vim.diagnostic.config({
+                update_in_insert = false, -- Don't update diagnostics while typing
+                severity_sort = true,
+                float = {
+                    focusable = false,
+                    style = "minimal",
+                    border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
+            })
         end,
-    },
-    {
-        'mason-org/mason.nvim',
-        opts = {},
-    },
-    {
-        'neovim/nvim-lspconfig',
     },
 }
