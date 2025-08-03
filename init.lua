@@ -174,6 +174,7 @@ require('lazy').setup({
   require 'plugins.formatting',
   require 'plugins.diagnostics',
   require 'plugins.treesitter',
+  require 'plugins.leet',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
