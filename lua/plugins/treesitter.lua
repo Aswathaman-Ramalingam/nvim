@@ -22,12 +22,12 @@ return {
                 "javascript",
                 "json",
                 "lua",
+                "luadoc",
                 "markdown",
                 "tsx",
                 "typescript",
                 "vim",
                 "vimdoc",
-                "luadoc",
             },
             sync_install = false,
             highlight = {

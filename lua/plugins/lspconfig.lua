@@ -110,4 +110,47 @@ return {
             })
         end,
     },
+    {
+        'javiorfo/nvim-wildcat',
+        lazy = true,
+        cmd = { "WildcatBuild", "WildcatRun", "WildcatUp", "WildcatServer" },
+        dependencies = { 'javiorfo/nvim-popcorn', 'javiorfo/nvim-spinetta' },
+        build = function()
+            require 'wildcat.build'.build()
+        end,
+        opts = {
+
+            -- Optional. Default 15
+            -- The size of the server console
+            -- console_size = 15,
+
+            -- Optional. Default "jboss"
+            -- Default server (jboss or tomcat)
+            default_server = "tomcat",
+
+            -- Optional. Default "maven"
+            -- Build tool (maven or gradle)
+            build_tool = "maven",
+
+            -- Optional. Default JAVA_HOME from the system
+            -- If a different java home is required
+            -- java_home = "/path/to/openjdk",
+
+            -- Optional
+            -- Default path JBOSS_HOME from the system
+            -- Default app_base "standalone/deployments"
+            -- jboss = {
+            --     path = "/path/to/jboss",
+            --     app_base = "standalone/deployments",
+            -- },
+
+            -- Optional
+            -- Default path CATALINA_HOME from the system
+            -- Default app_base "webapps"
+            -- tomcat = {
+            --     path = "/path/to/tomcat",
+            --     app_base = "webapps",
+            -- }
+        }
+    }
 }

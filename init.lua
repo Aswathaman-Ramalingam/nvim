@@ -170,11 +170,13 @@ require('lazy').setup({
   require 'plugins.lspconfig',
   require 'plugins.telescope',
   require 'plugins.completions',
-  require 'plugins.catppuccin',
+  require 'plugins.theme',
   require 'plugins.formatting',
   require 'plugins.diagnostics',
   require 'plugins.treesitter',
   require 'plugins.leet',
+  require 'plugins.lualine',
+
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
