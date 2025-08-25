@@ -1,3 +1,5 @@
+-- Completion & snippets
+
 return {
     {
         'github/copilot', url = "git@github.com:github/copilot.vim.git",
@@ -38,15 +40,6 @@ return {
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-e>'] = cmp.mapping.abort(),
                     ['<CR>'] = cmp.mapping.confirm { select = true },
-                    -- ['<Tab>'] = cmp.mapping(function(fallback)
-                    --   if cmp.visible() then
-                    --     cmp.select_next_item()
-                    --   elseif luasnip.expand_or_jumpable() then
-                    --     luasnip.expand_or_jump()
-                    --   else
-                    --     fallback()
-                    --   end
-                    -- end, { 'i', 's' }),
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
@@ -68,3 +61,4 @@ return {
         end,
     },
 }
+

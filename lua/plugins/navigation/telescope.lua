@@ -1,3 +1,5 @@
+-- Telescope
+
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -22,18 +24,17 @@ return {
         defaults = {
           layout_strategy = 'horizontal',
           layout_config = {
-            width = 0.95, -- Use 95% of the screen width
-            height = 0.95, -- Use 95% of the screen height
+            width = 0.95,
+            height = 0.95,
             preview_cutoff = 120,
             horizontal = {
               preview_width = 0.65,
             },
             vertical = {
-              preview_height = 0.5, -- valid for vertical
+              preview_height = 0.5,
             },
           },
         },
-        -- pickers = {}
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -74,3 +75,4 @@ return {
     end,
   },
 }
+

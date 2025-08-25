@@ -1,3 +1,5 @@
+-- Formatting & tags
+
 return {
     {
         'stevearc/conform.nvim',
@@ -63,3 +65,4 @@ return {
         event = 'InsertEnter',
     },
 }
+

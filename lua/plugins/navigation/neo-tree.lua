@@ -1,5 +1,4 @@
--- Neo-tree is a Neovim plugin to browse the file system
--- https://github.com/nvim-neo-tree/neo-tree.nvim
+-- File explorer
 
 return {
     'nvim-neo-tree/neo-tree.nvim',
@@ -22,7 +21,7 @@ return {
                     ['Y'] = function(state)
                         local node = state.tree:get_node()
                         local path = node:get_id()
-                        vim.fn.setreg('+', path, 'c') -- Copies to system clipboard
+                        vim.fn.setreg('+', path, 'c')
                     end,
                 },
             },
@@ -32,3 +31,4 @@ return {
         },
     },
 }
+

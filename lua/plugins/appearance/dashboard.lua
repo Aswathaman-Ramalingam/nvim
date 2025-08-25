@@ -1,11 +1,7 @@
 -- Dashboard
--- https://github.com/nvimdev/dashboard-nvim
 
-custom_header = {
-    '',
-    '',
-    '',
-    '',
+local custom_header = {
+    '', '', '', '',
     '                                    ██████                                    ',
     '                                ████▒▒▒▒▒▒████                                ',
     '                              ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                              ',
@@ -20,10 +16,7 @@ custom_header = {
     '                        ██▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒██                        ',
     '                        ████  ██▒▒██  ██▒▒▒▒██  ██▒▒██                        ',
     '                        ██      ██      ████      ████                        ',
-    '',
-    '',
-    '',
-    '',
+    '', '', '', '',
 }
 
 return {
@@ -60,3 +53,4 @@ return {
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } },
 }
+

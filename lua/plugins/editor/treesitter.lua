@@ -1,3 +1,5 @@
+-- Treesitter config
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -43,3 +45,4 @@ return {
         },
     },
 }
+
