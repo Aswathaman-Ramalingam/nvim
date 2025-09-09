@@ -16,8 +16,8 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- Tabs/indent
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.o.breakindent = true
 
@@ -45,7 +45,7 @@ vim.o.inccommand = 'split'
 
 -- Clipboard (async on start)
 vim.schedule(function()
-    vim.o.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 
 -- Kitty padding toggle
@@ -59,10 +59,9 @@ vim.cmd [[
 
 -- Yank highlight
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight on yank',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function()
-        vim.hl.on_yank()
-    end,
+  desc = 'Highlight on yank',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
 })
-
