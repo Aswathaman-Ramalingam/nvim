@@ -22,6 +22,7 @@ require('lazy').setup({
     { import = 'plugins.navigation' },
     { import = 'plugins.lsp.init' },
     { import = 'plugins.extras' },
+    { import = 'plugins.ai' },
   },
 }, {
   ui = {
