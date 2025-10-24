@@ -1,8 +1,7 @@
 -- pyright
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.pyright.setup {
+return function(capabilities)
+  vim.lsp.config('pyright', {
     capabilities = capabilities,
-    on_attach = on_attach,
     filetypes = { 'python' },
     settings = {
       python = {
@@ -15,5 +14,5 @@ return function(lspconfig, capabilities, on_attach)
         pythonPath = 'python3',
       },
     },
-  }
+  })
 end

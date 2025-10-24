@@ -1,8 +1,7 @@
 -- ts_ls (TypeScript/JavaScript)
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.ts_ls.setup {
+return function(capabilities)
+  vim.lsp.config('ts_ls', {
     capabilities = capabilities,
-    on_attach = on_attach,
     filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
     settings = {
       typescript = {
@@ -28,5 +27,5 @@ return function(lspconfig, capabilities, on_attach)
         },
       },
     },
-  }
+  })
 end

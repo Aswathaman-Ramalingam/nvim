@@ -1,8 +1,7 @@
 -- rust_analyzer
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.rust_analyzer.setup {
+return function(capabilities)
+  vim.lsp.config('rust_analyzer', {
     capabilities = capabilities,
-    on_attach = on_attach,
     filetypes = { 'rust' },
     settings = {
       ['rust-analyzer'] = {
@@ -19,5 +18,5 @@ return function(lspconfig, capabilities, on_attach)
         workspace = { symbol = { search = { scope = 'workspace_and_dependencies', limit = 128 } } },
       },
     },
-  }
+  })
 end

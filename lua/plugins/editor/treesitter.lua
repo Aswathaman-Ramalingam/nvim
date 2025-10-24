@@ -7,9 +7,6 @@ return {
       require('nvim-treesitter.install').update { with_sync = true }
     end,
     event = { 'BufEnter' },
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
     config = function(_, opts)
       local treesitter = require 'nvim-treesitter.configs'
 

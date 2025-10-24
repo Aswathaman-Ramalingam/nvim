@@ -1,12 +1,12 @@
 -- lua_ls (Lua Language Server)
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.lua_ls.setup {
+return function(capabilities)
+  vim.lsp.config('lua_ls', {
     capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = { 'lua' },
     settings = {
       Lua = {
-        diagnostics = { globals = { 'vim' } },
+        diagnostics = {
+          globals = { 'vim' },
+        },
         workspace = {
           library = {
             vim.fn.expand '$VIMRUNTIME/lua',
@@ -15,5 +15,5 @@ return function(lspconfig, capabilities, on_attach)
         },
       },
     },
-  }
+  })
 end

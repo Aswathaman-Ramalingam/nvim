@@ -1,8 +1,7 @@
 -- jdtls
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.jdtls.setup {
+return function(capabilities)
+  vim.lsp.config('jdtls', {
     capabilities = capabilities,
-    on_attach = on_attach,
     cmd = { 'jdtls' },
     filetypes = { 'java' },
     settings = {
@@ -27,5 +26,5 @@ return function(lspconfig, capabilities, on_attach)
         configuration = { runtimes = { { name = 'JavaSE-17', path = '~/.sdkman/candidates/java/17.0.2-open', default = true } } },
       },
     },
-  }
+  })
 end

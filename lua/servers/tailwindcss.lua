@@ -1,15 +1,12 @@
 -- tailwindcss
-return function(lspconfig, capabilities, on_attach)
-  lspconfig.tailwindcss.setup {
+return function(capabilities)
+  vim.lsp.config('tailwindcss', {
     capabilities = capabilities,
-    on_attach = on_attach,
     settings = {
       tailwindCSS = {
         includeLanguages = {
           html = 'html',
-          javascript = 'javascript',
           css = 'css',
-          typescript = 'typescript',
           typescriptreact = 'typescriptreact',
           javascriptreact = 'javascriptreact',
           vue = 'vue',
@@ -41,5 +38,5 @@ return function(lspconfig, capabilities, on_attach)
         experimental = { classRegex = { 'cva\\(([^)]*)\\)', 'cx\\(([^)]*)\\)', 'cn\\(([^)]*)\\)' } },
       },
     },
-  }
+  })
 end
