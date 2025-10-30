@@ -2,8 +2,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'mason-org/mason.nvim', opts = {} },
-    'creativenull/efmls-configs-nvim', -- Preconfigured EFM Language Server setups
-    'hrsh7th/cmp-nvim-lsp', -- nvim-cmp source for LSP-based completion
+    'hrsh7th/cmp-nvim-lsp',
   },
   config = function()
     require('utils.diagnostics').setup()
