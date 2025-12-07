@@ -8,6 +8,7 @@ require 'servers.bashls'(capabilities)
 require 'servers.tailwindcss'(capabilities)
 require 'servers.rust_analyzer'(capabilities)
 require 'servers.svelte'(capabilities)
+require 'servers.jdtls'(capabilities)
 
 vim.lsp.enable {
   'lua_ls',
@@ -17,5 +18,6 @@ vim.lsp.enable {
   'bashls',
   'tailwindcss',
   'rust_analyzer',
+  'jdtls',
   'svelte',
 }
